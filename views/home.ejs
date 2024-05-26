@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Semantic UI CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Inventory Management System</title>
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white custom-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/images/admin.svg" alt="..." width="50" class="rounded-circle img-thumbnail shadow-sm">
+            <span class="shop-name">Team 10</span>
+            <small class="admin-badge">(Admin)</small>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <form action="/index.html" method="get" class="d-inline">
+                        <button type="submit" class="btn btn-danger">
+                            <p class="m-0">Log Out</p>
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- End vertical navbar -->
+
+
+<!-- Page content -->
+<br> <br>
+<nav class="navbar navbar-expand-lg navbar-light bg-white custom-navbar">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a href="/home" class="nav-link fs-1 text-white me-5">
+                        <i class="home icon"></i><b> Dashboard </b>
+                    </a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="orderDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <b> Order </b>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="orderDropdown">
+                        <li><a class="dropdown-item fs-1" href="/addorder"><b>Add Order</b></a></li>
+                        <li><a class="dropdown-item fs-1" href="/vieworder"><b>View Orders</b></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="stockDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <b>Stock</b>
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="stockDropdown">
+                        <li><a class="dropdown-item fs-1" href="/viewstock"><b>View Stocks</b></a></li>
+                        <li><a class="dropdown-item fs-1" href="/addstock"><b>Add Stock</b></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <b> <a href="/salesreport" class="nav-link fs-1 text-white me-5 ms-5">
+                            <i class="plus circle icon"></i> Sales Report
+                        </a>
+                    </b>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+        <!-- Page content -->
+
+        <br>
+        <h1><b>Summary</b></h1>
+        <br>
+        <br>
+        <div class="fluid container">
+            <div class="ui four column grid">
+                <div class="col-sm-6">
+                    <div class="ui fluid card text-white" style="background-color:#2784ff;">
+
+                        <div class="content">
+                            <center>
+                                <div class="ui statistic">
+                                    <div class="value">
+                                        <p class="text-white">
+                                            <i class="dollar sign icon" id="total_sales"></i>
+                                            
+                                        </p>
+                                    </div>
+                                    <div class="label">
+                                        Total Sales
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="ui fluid card text-white" style="background-color: #ff9500;">
+
+                        <div class="fluid content">
+                            <center>
+                                <div class="ui statistic">
+                                    <div class="value">
+                                        <p class="text-white">
+                                            <i class="shopping cart icon" id="total_orders"></i>
+                                           
+                                        </p>
+                                    </div>
+                                    <div class="label">
+                                        Total Orders
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="ui fluid card text-dark" style="background-color: #ff9500;">
+                        <div class="content">
+                            <center>
+                                <div class="ui statistic">
+                                    <div class="value">
+                                        <p class="text-white">
+                                            <i class="tags icon" id="total_stock"></i>
+                                          
+                                        </p>
+                                    </div>
+                                    <div class="label">
+                                        Total Stock
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="ui fluid card text-white " style="background-color: #2784ff;">
+
+                        <div class="fluid content">
+                            <center>
+                                <div class="ui statistic">
+                                    <div class="value">
+                                        <p class="text-white">
+                                            <i class="dollar sign icon" id="total_stock_value"></i>
+                                            
+                                        </p>
+                                    </div>
+                                    <div class="label">
+                                        Total Stock Value
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End demo content -->
+        
+        <br>
+        
+        <!--Semantic UI Scripts-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+            <script src="/socket.io/socket.io.js"></script>
+             <script>
+                /* Socket Connection Establish */
+                 let socket = io();
+                    socket.on('total_amount', (msg) => {
+                        document.getElementById("total_sales").innerHTML = msg;
+                       
+                    });
+                    socket.on('total_order', (msg) =>{
+                         document.getElementById("total_orders").innerHTML = msg;
+                    });
+                    socket.on('total_stock', (msg) => {
+                            document.getElementById("total_stock").innerHTML = msg;
+                        });
+                    socket.on('stock_value', (msg) =>{
+                        document.getElementById("total_stock_value").innerHTML = msg;
+                    });
+             </script>
+        
+</body>
+
+</html>

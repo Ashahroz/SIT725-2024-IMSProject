@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="styles.css">
+    <!--Semantic-UI CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Add New Stock</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/images/admin.svg" alt="..." width="50" class="rounded-circle img-thumbnail shadow-sm">
+                <span class="shop-name">Team 10</span>
+                <small class="admin-badge">(Admin)</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <form action="/index.html" method="get" class="d-inline">
+                            <button type="submit" class="btn btn-danger">
+                                <p class="m-0">Log Out</p>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <!-- End vertical navbar -->
+    
+    
+    <!-- Page content -->
+    <br> <br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white custom-navbar">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a href="/home" class="nav-link fs-1 text-white me-5">
+                            <i class="home icon"></i><b> Dashboard </b>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="orderDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <b> Order </b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="orderDropdown">
+                            <li><a class="dropdown-item fs-1" href="/addorder"><b>Add Order</b></a></li>
+                            <li><a class="dropdown-item fs-1" href="/vieworder"><b>View Orders</b></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="stockDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <b>Stock</b>
+                        </a>
+    
+                        <ul class="dropdown-menu" aria-labelledby="stockDropdown">
+                            <li><a class="dropdown-item fs-1" href="/viewstock"><b>View Stocks</b></a></li>
+                            <li><a class="dropdown-item fs-1" href="/addstock"><b>Add Stock</b></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <b> <a href="/salesreport" class="nav-link fs-1 text-white me-5 ms-5">
+                                <i class="plus circle icon"></i> Sales Report
+                            </a>
+                        </b>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Page content -->
+
+        <h1><b>Add New Stock</b></h1>
+        <br>
+        <center><img class="ui medium rounded image" src="images/addstock.svg"></center>
+        <br>
+        
+        <div class="ui fluid container">
+
+                <table class="ui inverted pink celled table tbl_code_with_mark" id="myTable">
+                    <thead>
+                        <tr style="background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);">
+                            <th>Item ID</th>
+                            <th>Item Name</th>
+                            <th>Brand</th>
+                            <th>Size</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td class="table-danger">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="itemid1" required>
+                                    <label for="floatingInput">Item ID</label>
+                                </div>
+                            </td>
+                            <td class="table-primary">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="itemname1"  required>
+                                    <label for="floatingInput">Item Name</label>
+
+                                </div>
+                            </td>
+                            <td class="table-warning">
+                                <div class="form-floating">
+                                    <select class="form-select" id="brandname" aria-label="Default select example" 
+                                        id="brand1" required>
+
+                                        <option value="Puma"> Puma </option>
+                                        <option value="Levis"> Levis </option>
+                                        <option value="Calvin Klen"> Calvin Klen </option>
+                                           
+                                    </select>
+                                    <label for="floatingInput">Brand</label>
+                                </div>
+                            </td>
+                            <td class="table-warning">
+                                <div class="form-floating">
+                                    <select class="form-select" aria-label="Default select example" 
+                                        id="size1" required>
+
+                                            <option value="M"> M </option>
+                                            <option value="L"> L </option>
+                                            <option value="XL"> XL</option>
+                                    </select>
+                                    <label for="floatingInput">Size</label>
+                                </div>
+                            </td>
+                            <td class="table-success">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control"  placeholder="Enter Amount"
+                                        id="amount1" required>
+                                    <label for="floatingInput">Amount</label>
+
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+
+                </table>
+                <center><button type="button" id="submit_button" class="ui teal submit button">Submit</button></center>
+           
+
+
+        </div>
+
+    </div>
+    <div class="page-content p-5" id="content" style="background: linear-gradient(to right, #e9edf1 47%, #ff8ab3 100%);
+  ">
+    </div>
+    <div class="page-content p-5" id="content" style="background: linear-gradient(to right, #e9edf1 47%, #ff8ab3 100%);
+  "></div>
+
+    <!-- Semnatic-UI Scripts -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        /* API Call to add an stock detail when user click on button */
+        function addStockData(jsonData){
+             $.ajax({
+                url: '/addstockdata',
+                data: JSON.stringify(jsonData),
+                processData: false,
+                contentType: "application/json; charset=UTF-8",
+                type: 'POST',
+                success: (result) => {
+                    alert(result.message);
+                    location.reload();
+                }
+            });
+        };
+
+        function submitForm(){
+            var data = {
+                "item_id" : document.getElementById("itemid1").value,
+                "item_name" : document.getElementById("itemname1").value,
+                "brand_name" : document.getElementById("brandname").value,
+                "size" : document.getElementById("size1").value,
+                "total_amount" : document.getElementById("amount1").value
+
+            };
+             var jsonData = data;
+             addStockData(jsonData);
+        };
+
+         var submit_button = document.getElementById("submit_button");
+                submit_button.onclick = function () {
+                submitForm();
+            };
+     </script>
+</body>
+
+</html>

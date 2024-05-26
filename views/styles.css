@@ -1,0 +1,65 @@
+/* Custom styles for the navbar */
+.custom-navbar {
+    background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.shop-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.admin-badge {
+    font-size: 0.9rem;
+    color: white;
+    margin-left: 5px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white;
+    font-size: 1.1rem;
+    margin-right: 20px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ff8ab3;
+    transition: color 0.3s;
+}
+
+.custom-link {
+    background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: white;
+}
+
+.custom-link:hover {
+    background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);
+    transition: background 0.3s;
+}
+
+.btn-danger {
+    background-color: #ff4d4d;
+    border: none;
+    padding: 5px 15px;
+    margin-left: 20px;
+}
+
+.btn-danger:hover {
+    background-color: #e60000;
+    transition: background 0.3s;
+}
+
+.btn-danger p {
+    margin: 0;
+    color: white;
+    font-size: 1rem;
+}
