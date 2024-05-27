@@ -20,51 +20,55 @@
     <br>
     <br>
     <br>
-    <div class="ui raised very padded text container segment">
-        <h1 class="fs-1 text-white" style="background: linear-gradient(to right, #2784ff 0%, #ff9500 88%);">
-            <center>Inventory Management System</center>
+    <div class="ui raised very padded text container segment"">
+      
+      <h1 class=" fs-1 text-white" style="background: linear-gradient(to right, #2784ff 0%, #ff9500 88%);">
+        <center><shop-name></center>
         </h1>
 
         <br>
         <h3 class="card-title">
             <center>Login to your account</center>
         </h3>
-        <div id="alertContainer" class="alert d-none" role="alert">
-            <span id="alertMessage"></span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-
-        <br>
-        <div class="ui two column grid">
-            <div class="row">
-                <div class="column">
-                    <img class="ui medium image" src="/images/logo.png">
-                </div>
-                <div class="column">
-
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="user icon"></i>
-                            <input placeholder="user@example.com" type="email" class="form-control" id="email"
-                                name="email" required>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="lock icon"></i>
-                            <input placeholder="password" type="password" class="form-control" id="password"
-                                name="password" required>
-                        </div>
-                    </div>
-
-                    <br>
-                    <button type="button" onClick="login()" class="ui fluid large teal submit button"
-                        style="background: linear-gradient(to right, #2784ff 0%, #ff9500 88%);">Login</button>
-                </div>
+            <div class="alert alert-danger" role="alert">
+                
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-        </div>
+
+           
+                <br>
+                <div class="ui two column grid">
+                    <div class="row">
+                        <div class="column">
+                            <img class="ui medium image" src="/images/logo.png">
+                        </div>
+                        <div class="column">
+                           
+                                <div class="field">
+                                    <div class="ui left icon input">
+                                        <i class="user icon"></i>
+                                        <input placeholder="user@example.com" type="email" class="form-control"
+                                            id="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="ui left icon input">
+                                        <i class="lock icon"></i>
+                                        <input placeholder="password" type="password" class="form-control" id="password"
+                                            name="password" required>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <button type="button" onClick="login()" class="ui fluid large teal submit button"
+                                    style="background: linear-gradient(to right, #2784ff 0%, #ff9500 88%);">Login</button>
+                        </div>
+                    </div>
+                </div>
 
     </div>
+
+    
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -74,53 +78,27 @@
         crossorigin="anonymous"></script>
 
     <script>
-        function validateEmail(email) {
-            const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            return re.test(String(email).toLowerCase());
-        }
-
-        function login() {
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            const alertContainer = document.getElementById("alertContainer");
-            const alertMessage = document.getElementById("alertMessage");
-
-            if (!validateEmail(email)) {
-                alertMessage.innerText = "Invalid email format";
-                alertContainer.classList.remove('d-none', 'alert-success');
-                alertContainer.classList.add('alert-danger');
-                return;
-            }
-
-            var loginData = {
-                "username": email,
-                "password": password
-            };
-
-            $.ajax({
+        var alertList = document.querySelectorAll('.alert')
+        alertList.forEach(function (alert) {
+            new bootstrap.Alert(alert)
+        })
+        function login(){
+           var loginData = { 
+            "username": document.getElementById("email").value,
+            "password": document.getElementById("password").value
+            }  
+             $.ajax({
                 url: '/login',
                 data: JSON.stringify(loginData),
                 processData: false,
                 contentType: "application/json; charset=UTF-8",
                 type: 'POST',
                 success: (result) => {
-                    alertMessage.innerText = "Redirecting to homepage";
-                    alertContainer.classList.remove('d-none', 'alert-danger');
-                    alertContainer.classList.add('alert-success');
-                    window.location.href = "/home";
-                },
-                error: (error) => {
-                    alertMessage.innerText = "Invalid username or password";
-                    alertContainer.classList.remove('d-none', 'alert-success');
-                    alertContainer.classList.add('alert-danger');
+                    alert(result.message);
+                   window.location.href="/home";
                 }
             });
         }
-
-        var alertList = document.querySelectorAll('.alert')
-        alertList.forEach(function (alert) {
-            new bootstrap.Alert(alert)
-        })
     </script>
 </body>
 

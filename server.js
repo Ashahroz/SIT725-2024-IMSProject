@@ -11,6 +11,7 @@ let router = require('./route/route');
 //Creating an HTTP server
 let http = require('http').createServer(app);
 
+
 //Configuring static files and view engine
 app.use(express.static(__dirname + '/views'));
 app.set('view engine','ejs');
@@ -20,7 +21,7 @@ let io = require('socket.io')(http);
 
 //Middleware for parsing JSON and URL-encoded data
 app.use(express.json());
-app.use(express.urlencoded({ extended: false })); 
+app.use(express.urlencoded({ extended: false }));
 
 //Routing requests to the router module
 app.use('/', router);
