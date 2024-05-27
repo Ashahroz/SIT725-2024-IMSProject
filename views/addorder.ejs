@@ -43,203 +43,217 @@
         </div>
     </nav>
 
-
-<!-- End vertical navbar -->
-
-    
-        <!-- Page content -->
-        <br> <br>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white custom-navbar">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item ">
-                            <a href="/home" class="nav-link fs-1 text-white me-5">
-                                <i class="home icon"></i><b> Dashboard </b>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="orderDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                              <b> Order </b>
-                            </a> 
-                            <ul class="dropdown-menu" aria-labelledby="orderDropdown">
-                                <li><a class="dropdown-item fs-1" href="/addorder"><b>Add Order</b></a></li>
-                                <li><a class="dropdown-item fs-1" href="/vieworder"><b>View Orders</b></a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                           <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="stockDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <b>Stock</b>
-                            </a>
-                            
-                            <ul class="dropdown-menu" aria-labelledby="stockDropdown">
-                                <li><a class="dropdown-item fs-1" href="/viewstock"><b>View Stocks</b></a></li>
-                                <li><a class="dropdown-item fs-1" href="/addstock"><b>Add Stock</b></a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                           <b> <a href="/salesreport" class="nav-link fs-1 text-white me-5 ms-5">
+    <!-- Page content -->
+    <br><br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white custom-navbar">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="/home" class="nav-link fs-1 text-white me-5">
+                            <i class="home icon"></i><b> Dashboard </b>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="orderDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <b> Order </b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="orderDropdown">
+                            <li><a class="dropdown-item fs-1" href="/vieworder"><b>View Orders</b></a></li>
+                            <li><a class="dropdown-item fs-1" href="/addorder"><b>Add Order</b></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="stockDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <b>Stock</b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="stockDropdown">
+                            <li><a class="dropdown-item fs-1" href="/viewstock"><b>View Stocks</b></a></li>
+                            <li><a class="dropdown-item fs-1" href="/addstock"><b>Add Stock</b></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <b> <a href="/salesreport" class="nav-link fs-1 text-white me-5 ms-5">
                                 <i class="plus circle icon"></i> Sales Report
                             </a>
-                            </b>
-                        </li>
-                    </ul>
-                </div>
+                        </b>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <h1><b>Add Order</b></h1>
-        <center><img class="ui small rounded image" src="/images/creditcard.svg"></center>     
-        
-        <br>
-        <div class="ui fluid container">
-                <table class="ui inverted pink celled table celled tbl_code_with_mark" id="myTable">
-                    <thead>
-                        <tr style="background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);">
-                            <th>Item No.</th>
-                            <th>Item ID</th>
-                            <th>Customer Name</th>
-                            <th>Category</th>
-                            <th>Brand</th>
-                            <th>Size</th>
-                            <th>Amount</th>
-                            <th>Phone Number</th>
-                        </tr>
-                    </thead>
-    
-                    <tbody>
-    
-                        <tr>
-                            <td class="table-info">
-                                <center><input type="text" id="number1" value=1 name="number1" style="border:0;outline:0"
-                                        size="4" disabled /></center>
-                            </td>
-                            <td class="table-danger">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="itemid1"size="4" required>
-                                    <label for="floatingInput">ID</label>
-                                </div>
-                            </td>
-                            <td class="table-primary">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="customername"  size="4"
-                                        required>
-                                    <label for="floatingInput">Name</label>
-    
-                                </div>
-                            </td>
-                            <td class="table-warning">
-                                <div class="form-floating">
-                                    <select class="form-select" aria-label="Default select example" name="category1"
-                                        id="category1" required>
-                                         
-                                            <option value="Shirt"> Shirt </option>
-                                            <option value="Jeans"> Jeans </option>
-                                            <option value="T-Shirt"> T-Shirt </option>
-                                            
-    
-                                    </select>
-                                    <label for="floatingInput">Category</label>
-                                </div>
-                            </td>
-                            <td class="table-warning">
-                                <div class="form-floating">
-                                    <select class="form-select" aria-label="Default select example" name="brand1"
-                                        id="brand1" required>
-                                      
-                                            <option value="Puma"> Puma </option>
-                                            <option value="Levis"> Levis </option>
-                                            <option value="Calvin Klen"> Calvin Klen </option> 
-
-    
-                                    </select>
-                                    <label for="floatingInput">Brand</label>
-                                </div>
-                            </td>
-                            <td class="table-warning">
-                                <div class="form-floating">
-                                    <select class="form-select" aria-label="Default select example" name="size1" id="size1"
-                                        required>
-                                       
-                                            <option value="M"> M </option>
-                                            <option value="L"> L </option>
-                                            <option value="XL"> XL</option>
-                                           
-    
-                                    </select>
-                                    <label for="floatingInput">Size</label>
-                                </div>
-                            </td>
-                            <td class="table-success">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control" id="amount1" min="0"
-                                        max="99999" required>
-                                    <label for="floatingInput">Amount <i class="dollar sign icon"></i></label>
-    
-                                </div>
-                            </td>
-                            <td class="table-primary">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="phone_number" size="4"
-                                        required>
-                                    <label for="floatingInput">Phone<i class="phone volume icon"></i></label>
-                                </div>
-                            </td>
-                        </tr>
-    
-                    </tbody>
-    
-    
-                </table>
-                <center><button type="button" id="submit_button" class="ui teal submit button">Submit</button></center>
-
-    
-    
-            
-            <br>
-    
         </div>
+    </nav>
+    <h1><b>Add Order</b></h1>
+    <center><img class="ui small rounded image" src="/images/creditcard.svg"></center>
+    <br>
+    <div class="ui fluid container">
+        <!-- Alert container for messages -->
+        <div id="alertContainer" class="alert d-none" role="alert">
+            <span id="alertMessage"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <table class="ui inverted pink celled table celled tbl_code_with_mark" id="myTable">
+            <thead>
+                <tr style="background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);">
+                    <th>Item No.</th>
+                    <th>Item ID</th>
+                    <th>Customer Name</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Size</th>
+                    <th>Amount</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="table-info">
+                        <center><input type="text" id="number1" value="1" name="number1" style="border:0;outline:0"
+                                size="4" disabled /></center>
+                    </td>
+                    <td class="table-danger">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="itemid1" size="4" required>
+                            <label for="floatingInput">ID</label>
+                        </div>
+                    </td>
+                    <td class="table-primary">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="customername" size="4" required>
+                            <label for="floatingInput">Name</label>
+                        </div>
+                    </td>
+                    <td class="table-warning">
+                        <div class="form-floating">
+                            <select class="form-select" aria-label="Default select example" name="category1"
+                                id="category1" required>
+                                <option value="">Select Category</option>
+                                <option value="Shirt">Shirt</option>
+                                <option value="Jeans">Jeans</option>
+                                <option value="T-Shirt">T-Shirt</option>
+                            </select>
+                            <label for="floatingInput">Category</label>
+                        </div>
+                    </td>
+                    <td class="table-warning">
+                        <div class="form-floating">
+                            <select class="form-select" aria-label="Default select example" name="brand1" id="brand1"
+                                required>
+                                <option value="">Select Brand</option>
+                                <option value="Puma">Puma</option>
+                                <option value="Levis">Levis</option>
+                                <option value="Calvin Klein">Calvin Klein</option>
+                            </select>
+                            <label for="floatingInput">Brand</label>
+                        </div>
+                    </td>
+                    <td class="table-warning">
+                        <div class="form-floating">
+                            <select class="form-select" aria-label="Default select example" name="size1" id="size1"
+                                required>
+                                <option value="">Select Size</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                            <label for="floatingInput">Size</label>
+                        </div>
+                    </td>
+                    <td class="table-success">
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="amount1" min="0" max="99999" required>
+                            <label for="floatingInput">Amount <i class="dollar sign icon"></i></label>
+                        </div>
+                    </td>
+                    <td class="table-primary">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="phone_number" size="4" required>
+                            <label for="floatingInput">Phone<i class="phone volume icon"></i></label>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <center><button type="button" id="submit_button" class="ui teal submit button">Submit</button></center>
     </div>
-    
-    
-    
-    <!-- Semnatic-UI Scripts -->
-    
+
+    <!-- Semantic-UI Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl9z4a5paN0TT6P7Bt4DA4EwtGIK7gtxsWkHxu2IOuHphz5DhsdEzi+5eD2"
-        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+
     <script>
-        /* API Call to add the order detail when clicked on button */
-        function addData(jsonData){
-             $.ajax({
+        // Function to show alert messages
+        function showAlert(type, message) {
+            var alertContainer = document.getElementById('alertContainer');
+            var alertMessage = document.getElementById('alertMessage');
+            alertContainer.className = 'alert alert-' + type;
+            alertMessage.innerHTML = message;
+            alertContainer.classList.remove('d-none');
+        }
+
+        // Validate form data
+        function validateFormData(data) {
+            if (!data.item_id.trim()) {
+                showAlert('danger', 'Item ID is required.');
+                return false;
+            }
+            if (!data.customer_name.trim()) {
+                showAlert('danger', 'Customer name is required.');
+                return false;
+            }
+            if (!data.category.trim()) {
+                showAlert('danger', 'Category is required.');
+                return false;
+            }
+            if (!data.brand.trim()) {
+                showAlert('danger', 'Brand is required.');
+                return false;
+            }
+            if (!data.size.trim()) {
+                showAlert('danger', 'Size is required.');
+                return false;
+            }
+            if (!data.total_amount || data.total_amount <= 0) {
+                showAlert('danger', 'Amount must be a positive number.');
+                return false;
+            }
+            if (!data.phone_number.trim()) {
+                showAlert('danger', 'Phone number is required.');
+                return false;
+            }
+            return true;
+        }
+
+        // API Call to add the order detail when clicked on button
+        function addData(jsonData) {
+            $.ajax({
                 url: '/adddata',
                 data: JSON.stringify(jsonData),
                 processData: false,
                 contentType: "application/json; charset=UTF-8",
                 type: 'POST',
                 success: (result) => {
-                    alert(result.message);
-                    location.reload();
+                    showAlert('success', 'Stock added successfully');
+                },
+                error: (xhr, status, error) => {
+                    showAlert('danger', 'Error: ' + xhr.responseText);
                 }
             });
-        };
-        function submitForm(){
+        }
+
+        function submitForm() {
             var data = {
                 "item_id": document.getElementById("itemid1").value,
                 "customer_name": document.getElementById("customername").value,
@@ -249,18 +263,18 @@
                 "total_amount": document.getElementById("amount1").value,
                 "phone_number": document.getElementById("phone_number").value
             };
-            var jsonData = data;
-            
-            addData(jsonData);
 
-        };
+            if (validateFormData(data)) {
+                addData(data);
+            }
+        }
+
         var submit_button = document.getElementById("submit_button");
-         submit_button.onclick = function() {
-               submitForm();
-            };
-
+        submit_button.onclick = function () {
+            submitForm();
+        };
     </script>
 
-    </body>
-    
-    </html>
+</body>
+
+</html>
