@@ -1,11 +1,16 @@
+//importing libraries (chai)
 var expect = require("chai").expect;
 var request = require("request");
+
+//Defining URLs
 var addDataUrl = "http://localhost:3000/adddata";
 var getDataUrl = "http://localhost:3000/getallorders";
 var addStockDataUrl = "http://localhost:3000/addstockdata";
 var getStockDataURL = "http://localhost:3000/getallstockdata";
 var deleteStockDataUrl= "http://localhost:3000/deletestock";
 var deletedOrderDataUrl = "http://localhost:3000/deleteorder";
+
+//Defining addorder data for tests
 let addorder = {
     "item_id": "600",
     "customer_name": "test customer",
@@ -16,6 +21,7 @@ let addorder = {
     "phone_number": "000"
 }
 
+//Defining addStockData for tests
 let addStockData = {
     "item_id": "700",
     "item_name": "test stock data",
@@ -24,6 +30,9 @@ let addStockData = {
     "total_amount": "5000"
 }
 
+//Writing Test Cases:
+
+//GET Request Test
 describe('GET Request', function () {
     it('returns status 200 to check if api works', function (done) {
         request(getDataUrl, function (error, response, body) {
@@ -40,6 +49,7 @@ describe('GET Request', function () {
     });
 });
 
+//Post a order Test
 describe('Post a order', function () {
     it('insert a order data to database', function (done) {
         request.post({ url: addDataUrl, form: addorder }, function (error, response, body) {
@@ -50,6 +60,7 @@ describe('Post a order', function () {
     });
 });
 
+//Post a stock data Test
 describe('Post a stock data', function () {
     it('insert a stock data to database', function (done) {
         request.post({ url: addStockDataUrl, form: addStockData }, function (error, response, body) {
@@ -76,7 +87,7 @@ describe('GET Request', function () {
     });
 });
 
-
+//Delete order data Test
 describe('Delete order data', function () {
     it('Delete a order data from database', function (done) {
         request.delete({ url: deletedOrderDataUrl, form: addorder }, function (error, response, body) {
@@ -87,7 +98,7 @@ describe('Delete order data', function () {
     });
 });
 
-
+//Delete stock data Test
 describe('Delete stock data', function () {
     it('Delete a stock data from database', function (done) {
         request.delete({ url: deleteStockDataUrl, form: addStockData }, function (error, response, body) {

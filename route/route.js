@@ -1,3 +1,5 @@
+//importing Express and creating a router
+
 var express = require('express');
 var router = express.Router();
 let controller = require('../contoller/controller'); 
@@ -10,6 +12,7 @@ router.get('/home', (req,res) =>{
     res.render('home');
 });
 
+// /addorder GET route
 router.get('/addorder', (req, res) => {
     res.render('addorder');
 });
@@ -55,4 +58,6 @@ router.get('/salesreport', (req,res) =>{
 router.post('/generatesalesreport', (req,res) =>{
     controller.generateSalesReport(req,res);
 });
+
+//Exporting the router
 module.exports = router;
