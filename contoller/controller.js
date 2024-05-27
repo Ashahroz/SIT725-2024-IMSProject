@@ -1,7 +1,6 @@
 let model = require('../model/model'); //importing the model module
 
 //Defining the 'addData' function
-
 const addData = (req,res) =>{
     let data = req.body;
     model.addData(data, (err,result) =>{
@@ -15,7 +14,6 @@ const addData = (req,res) =>{
 }
 
 //Defining the getAllOrders function
-
 const getAllOrders = (req,res) =>{
     model.getAllOrders((err,result) =>{
         if(err){
@@ -28,7 +26,6 @@ const getAllOrders = (req,res) =>{
 }
 
 //Defining the addStockData function
-
 const addStockData = (req,res) =>{
     let stockdata = req.body;
     model.addStockData(stockdata, (err,result) => {
@@ -42,7 +39,6 @@ const addStockData = (req,res) =>{
 }
 
 //Defining the getAllStockData function
-
 const getAllStockData = (req,res) =>{
     model.getAllStockData((err, result) =>{
         if (err) {
@@ -55,7 +51,6 @@ const getAllStockData = (req,res) =>{
 }
 
 //Defining the deleteOrderDataByItemId function
-
 const deleteOrderDataByItemId = (req,res) =>{
     let itemId = req.body;
     model.deleteOrderDataByItemId(itemId, (err, result) =>{
@@ -66,11 +61,9 @@ const deleteOrderDataByItemId = (req,res) =>{
             res.json({ statusCode: 200, message: 'Successfully Deleted' });
         }
     });
-    
 }
 
 //Defining the deleteStockDataByItemId function
-
 const deleteStockDataByItemId = (req,res) =>{
     let itemId = req.body;
     model.deleteStockDataByItemId(itemId, (err, result) =>{
@@ -84,7 +77,6 @@ const deleteStockDataByItemId = (req,res) =>{
 }
 
 //Defining the generateSalesReport function
-
 const generateSalesReport = (req,res) =>{
     let category = req.body;
     model.generateSalesReport(category, (err, result) =>{
@@ -98,7 +90,6 @@ const generateSalesReport = (req,res) =>{
 }
 
 //Defining the login function
-
 const login = (req,res) =>{
     let loginData = req.body;
     model.login(loginData, (err, result) =>{
@@ -123,5 +114,4 @@ const login = (req,res) =>{
 }
 
 //Exporting the controller function
-
 module.exports = { login, generateSalesReport,deleteOrderDataByItemId, deleteStockDataByItemId , addData, getAllOrders, addStockData, getAllStockData }
