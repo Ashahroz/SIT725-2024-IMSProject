@@ -17,182 +17,186 @@
 </head>
 
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white custom-navbar">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="/images/admin.svg" alt="..." width="50" class="rounded-circle img-thumbnail shadow-sm">
-            <span class="shop-name">Team 10</span>
-            <small class="admin-badge">(Admin)</small>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <form action="/index.html" method="get" class="d-inline">
-                        <button type="submit" class="btn btn-danger">
-                            <p class="m-0">Log Out</p>
-                        </button>
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
-<!-- End vertical navbar -->
-
-
-<!-- Page content -->
-<br> <br>
-<nav class="navbar navbar-expand-lg navbar-light bg-white custom-navbar">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item ">
-                    <a href="/home" class="nav-link fs-1 text-white me-5">
-                        <i class="home icon"></i><b> Dashboard </b>
-                    </a>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="orderDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <b> Order </b>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="orderDropdown">
-                        <li><a class="dropdown-item fs-1" href="/addorder"><b>Add Order</b></a></li>
-                        <li><a class="dropdown-item fs-1" href="/vieworder"><b>View Orders</b></a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="stockDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <b>Stock</b>
-                    </a>
-
-                    <ul class="dropdown-menu" aria-labelledby="stockDropdown">
-                        <li><a class="dropdown-item fs-1" href="/viewstock"><b>View Stocks</b></a></li>
-                        <li><a class="dropdown-item fs-1" href="/addstock"><b>Add Stock</b></a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <b> <a href="/salesreport" class="nav-link fs-1 text-white me-5 ms-5">
-                            <i class="plus circle icon"></i> Sales Report
-                        </a>
-                    </b>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-                <!-- Page content -->
-                <h1><b>Sales Report</b></h1>
-                <center><img class="ui small rounded image" src="/images/creditcard.svg"></center>
-                <div class="ui fluid container">
-                    <table class="ui inverted table table-bordered" style="background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);">
-                   <thead>
-                        <th>Select Category To Generate Sales Report</th>
-                   </thead>
-                    <tbody>
-                        <tr style="background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);">
-                            <td class="table-warning">
-                                <div class="form-floating">
-                                    <select class="form-select" aria-label="Default select example" id="category" required>
-                            
-                                        <option value="Shirt"> Shirt </option>
-                                        <option value="Jeans"> Jeans </option>
-                                        <option value="T-Shirt"> T-Shirt </option>
-                            
-                            
-                                    </select>
-                                    <label for="floatingInput">Category</label>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <center><button type="button" id="submit_button" onClick="generateReportByCategory()" class="ui teal submit button">Generate Report</button>
-                </div>
-                <br>
-            <div class="ui fluid container">
-                <h3>Generated Sales Report</h3>
-                <table class="ui inverted table table-bordered" style="background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);">
-                    <thead>
-                        <th>Category</th>
-                        <th>Customer Name</th>
-                        <th>Total Amount</th>
-                    </thead>
-                    <tbody id="generatedreport">
-
-                    </tbody>
-                </table>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/images/admin.svg" alt="..." width="50" class="rounded-circle img-thumbnail shadow-sm">
+                <span class="shop-name">Team 10</span>
+                <small class="admin-badge">(Admin)</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <form action="/index.html" method="get" class="d-inline">
+                            <button type="submit" class="btn btn-danger">
+                                <p class="m-0">Log Out</p>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </div>
-                <!-- Semnatic-UI Scripts -->
-                
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
-                
-                <!-- Option 1: Bootstrap Bundle with Popper -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-                    crossorigin="anonymous"></script>
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            <script>
-                function generateReportByCategory(){
-                    var category = document.getElementById("category").value;
-                    
-                    var query = { 
-                        "category":category
+    </nav>
+
+
+    <!-- End vertical navbar -->
+
+
+    <!-- Page content -->
+    <br> <br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white custom-navbar">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a href="/home" class="nav-link fs-1 text-white me-5">
+                            <i class="home icon"></i><b> Dashboard </b>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="orderDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <b> Order </b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="orderDropdown">
+                            <li><a class="dropdown-item fs-1" href="/vieworder"><b>View Orders</b></a></li>
+                            <li><a class="dropdown-item fs-1" href="/addorder"><b>Add Order</b></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fs-1 text-white me-5 ms-5" href="#" id="stockDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <b>Stock</b>
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="stockDropdown">
+                            <li><a class="dropdown-item fs-1" href="/viewstock"><b>View Stocks</b></a></li>
+                            <li><a class="dropdown-item fs-1" href="/addstock"><b>Add Stock</b></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <b> <a href="/salesreport" class="nav-link fs-1 text-white me-5 ms-5">
+                                <i class="plus circle icon"></i> Sales Report
+                            </a>
+                        </b>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page content -->
+    <h1><b>Sales Report</b></h1>
+    <center><img class="ui small rounded image" src="/images/creditcard.svg"></center>
+    <div class="ui fluid container">
+        <table class="ui inverted table table-bordered"
+            style="background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);">
+            <thead>
+                <th>Select Category To Generate Sales Report</th>
+            </thead>
+            <tbody>
+                <tr style="background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);">
+                    <td class="table-warning">
+                        <div class="form-floating">
+                            <select class="form-select" aria-label="Default select example" id="category" required>
+
+                                <option value="Shirt"> Shirt </option>
+                                <option value="Jeans"> Jeans </option>
+                                <option value="T-Shirt"> T-Shirt </option>
+
+
+                            </select>
+                            <label for="floatingInput">Category</label>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <center><button type="button" id="submit_button" onClick="generateReportByCategory()"
+                class="ui teal submit button">Generate Report</button>
+    </div>
+    <br>
+    <div class="ui fluid container">
+        <h3>Generated Sales Report</h3>
+        <table class="ui inverted table table-bordered"
+            style="background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);">
+            <thead>
+                <th>Category</th>
+                <th>Customer Name</th>
+                <th>Total Amount</th>
+            </thead>
+            <tbody id="generatedreport">
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <!-- Semnatic-UI Scripts -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        function generateReportByCategory() {
+            var category = document.getElementById("category").value;
+
+            var query = {
+                "category": category
+            }
+            var jsonQuery = query;
+            console.log(jsonQuery);
+            $.ajax({
+                url: '/generatesalesreport',
+                data: JSON.stringify(jsonQuery),
+                processData: false,
+                contentType: "application/json; charset=UTF-8",
+                type: 'post',
+                success: (result) => {
+                    console.log(result.data);
+                    var ui = "";
+                    for (var i = 0; i < result.data.length; i++) {
+                        ui += "<tr><td>" + result.data[i].category + "</td>" +
+                            "<td>" + result.data[i].customer_name + "</td>" +
+                            "<td>" + result.data[i].total_amount + "</td>"
+
                     }
-                    var jsonQuery = query;
-                    console.log(jsonQuery);
-                    $.ajax({
-                        url: '/generatesalesreport',
-                        data: JSON.stringify(jsonQuery),
-                        processData: false,
-                        contentType: "application/json; charset=UTF-8",
-                        type: 'post',
-                        success: (result) => {
-                            console.log(result.data);
-                            var ui = "";
-                            for(var i=0;i<result.data.length;i++){
-                                ui+="<tr><td>"+result.data[i].category+"</td>"+
-                                    "<td>"+result.data[i].customer_name+"</td>"+
-                                    "<td>"+result.data[i].total_amount+"</td>"
-                                    
-                            }
-                           
-                            document.getElementById("generatedreport").innerHTML = ui;
-                             addLastRow(result.data);
-                            
-                        }
-                    });
+
+                    document.getElementById("generatedreport").innerHTML = ui;
+                    addLastRow(result.data);
+
                 }
-                function addLastRow(data) {
-                    var total_amount=0;
-                    for(var i=0;i<data.length;i++){
-                         total_amount += Number(data[i].total_amount);
-                    }
-                    console.log(total_amount);
-                    const newRow = document.getElementById("generatedreport").insertRow(-1);
-                    // Create new cells for the row
-                    const cell1 = newRow.insertCell(0);
-                    const cell2 = newRow.insertCell(1);
-                    cell1.colSpan = 2; 
-                    cell1.innerHTML = "<center> Total Amount </center>";
-                    cell2.innerHTML = total_amount;
-                }
-            </script>
+            });
+        }
+        function addLastRow(data) {
+            var total_amount = 0;
+            for (var i = 0; i < data.length; i++) {
+                total_amount += Number(data[i].total_amount);
+            }
+            console.log(total_amount);
+            const newRow = document.getElementById("generatedreport").insertRow(-1);
+            // Create new cells for the row
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            cell1.colSpan = 2;
+            cell1.innerHTML = "<center> Total Amount </center>";
+            cell2.innerHTML = total_amount;
+        }
+    </script>
 </body>
+
 </html>
