@@ -1,17 +1,33 @@
+//Importing the required libraries
 var express = require('express');
 var app = express();
+
+//Establishing database connection
 require('./dbConnection');
+
+//Importing router
 let router = require('./route/route');
+
+//Creating an HTTP server
 let http = require('http').createServer(app);
+
+//Configuring static files and view engine
 app.use(express.static(__dirname + '/views'));
 app.set('view engine','ejs');
+
+//Initializing Socket.IO
 let io = require('socket.io')(http);
 
+//Middleware for parsing JSON and URL-encoded data
 app.use(express.json());
-app.use(express.urlencoded({ extended: false })); // 
+app.use(express.urlencoded({ extended: false })); 
+
+//Routing requests to the router module
 app.use('/', router);
+
+//Socket.IO event handlers
 io.on('connection', (socket) => {
-    console.log('a client is connected');
+    console.log('a client is connected'); // Socket.IO event handlers for client connections, disconnections, and data exchange
 
     // Set a flag to track client activity
     let clientActive = false;
@@ -50,8 +66,7 @@ io.on('connection', (socket) => {
     });
 });
 
-
-
+//Listening on a port
 var port = process.env.port || 3000;
 
 http.listen(port, () => {
