@@ -245,9 +245,7 @@
                 contentType: "application/json; charset=UTF-8",
                 type: 'POST',
                 success: (result) => {
-                    showAlert('success', result.message);
-                    // Optionally, you can refresh the page or perform other actions
-                    // location.reload();
+                    showAlert('success', 'Stock added successfully');
                 },
                 error: (xhr, status, error) => {
                     showAlert('danger', 'Error: ' + xhr.responseText);
