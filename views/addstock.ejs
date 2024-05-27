@@ -94,85 +94,6 @@
         </div>
     </nav>
 
-        <!-- Page content -->
-
-        <h1><b>Add New Stock</b></h1>
-        <br>
-        <center><img class="ui medium rounded image" src="images/addstock.svg"></center>
-        <br>
-        
-        <div class="ui fluid container">
-
-                <table class="ui inverted pink celled table tbl_code_with_mark" id="myTable">
-                    <thead>
-                        <tr style="background: linear-gradient(to bottom, #2784ff 0%, #ff9500 100%);">
-                            <th>Item ID</th>
-                            <th>Item Name</th>
-                            <th>Brand</th>
-                            <th>Size</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td class="table-danger">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="itemid1" required>
-                                    <label for="floatingInput">Item ID</label>
-                                </div>
-                            </td>
-                            <td class="table-primary">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="itemname1"  required>
-                                    <label for="floatingInput">Item Name</label>
-
-                                </div>
-                            </td>
-                            <td class="table-warning">
-                                <div class="form-floating">
-                                    <select class="form-select" id="brandname" aria-label="Default select example" 
-                                        id="brand1" required>
-
-                                        <option value="Puma"> Puma </option>
-                                        <option value="Levis"> Levis </option>
-                                        <option value="Calvin Klen"> Calvin Klen </option>
-                                           
-                                    </select>
-                                    <label for="floatingInput">Brand</label>
-                                </div>
-                            </td>
-                            <td class="table-warning">
-                                <div class="form-floating">
-                                    <select class="form-select" aria-label="Default select example" 
-                                        id="size1" required>
-
-                                            <option value="M"> M </option>
-                                            <option value="L"> L </option>
-                                            <option value="XL"> XL</option>
-                                    </select>
-                                    <label for="floatingInput">Size</label>
-                                </div>
-                            </td>
-                            <td class="table-success">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control"  placeholder="Enter Amount"
-                                        id="amount1" required>
-                                    <label for="floatingInput">Amount</label>
-
-                                </div>
-                            </td>
-                        </tr>
-
-                    </tbody>
-
-
-                </table>
-                <center><button type="button" id="submit_button" class="ui teal submit button">Submit</button></center>
-           
-
-
         </div>
 
     </div>
@@ -202,31 +123,14 @@
                 processData: false,
                 contentType: "application/json; charset=UTF-8",
                 type: 'POST',
-                success: (result) => {
-                    alert(result.message);
-                    location.reload();
+
                 }
             });
         };
 
         function submitForm(){
             var data = {
-                "item_id" : document.getElementById("itemid1").value,
-                "item_name" : document.getElementById("itemname1").value,
-                "brand_name" : document.getElementById("brandname").value,
-                "size" : document.getElementById("size1").value,
-                "total_amount" : document.getElementById("amount1").value
 
-            };
-             var jsonData = data;
-             addStockData(jsonData);
-        };
-
-         var submit_button = document.getElementById("submit_button");
-                submit_button.onclick = function () {
-                submitForm();
-            };
-     </script>
 </body>
 
 </html>
